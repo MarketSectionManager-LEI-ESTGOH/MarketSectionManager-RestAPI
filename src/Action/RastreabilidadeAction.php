@@ -20,16 +20,27 @@ final class RastreabilidadeAction
         // Invoke the Domain with inputs and retain the result
         $rastreabilidade_id = $this->RastreabilidadeCreator->addRastreabilidade($data);
 
+        switch ($rastreabilidade_id) {
+            case -2:
+                $response->getBody()->write((string)json_encode("Fornecedor Incorreto"));
+                return $response->withStatus(400);
+                break;
+            case -3:
+                $response->getBody()->write((string)json_encode("Codigo Interno"));
+                return $response->withStatus(400);
+                break;
+            default:
+                // Transform the result into the JSON representation
+                $result = [
+                    'rastreabilidade_id' => $rastreabilidade_id
+                ];
 
-        // Transform the result into the JSON representation
-        $result = [
-            'rastreabilidade_id' => $rastreabilidade_id
-        ];
+                $response->getBody()->write((string)json_encode($result));
 
-        $response->getBody()->write((string)json_encode($result));
+                return $response
+                    ->withHeader('Content-Type', 'application/json')
+                    ->withStatus(201);
+        }
 
-        return $response
-            ->withHeader('Content-Type', 'application/json')
-            ->withStatus(201);
     }
 }
