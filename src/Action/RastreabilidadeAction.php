@@ -23,11 +23,11 @@ final class RastreabilidadeAction
         switch ($rastreabilidade_id) {
             case -2:
                 $response->getBody()->write((string)json_encode("err_forn"));
-                return $response->withStatus(400);
+                return $response->withStatus(201);
                 break;
             case -3:
                 $response->getBody()->write((string)json_encode("err_prod"));
-                return $response->withStatus(400);
+                return $response->withStatus(201);
                 break;
             default:
                 // Transform the result into the JSON representation
