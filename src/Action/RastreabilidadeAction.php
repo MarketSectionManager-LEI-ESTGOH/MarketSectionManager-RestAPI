@@ -22,11 +22,11 @@ final class RastreabilidadeAction
 
         switch ($rastreabilidade_id) {
             case -2:
-                $response->getBody()->write((string)json_encode("Fornecedor Incorreto"));
+                $response->getBody()->write((string)json_encode("err_forn"));
                 return $response->withStatus(400);
                 break;
             case -3:
-                $response->getBody()->write((string)json_encode("Codigo Interno"));
+                $response->getBody()->write((string)json_encode("err_prod"));
                 return $response->withStatus(400);
                 break;
             default:

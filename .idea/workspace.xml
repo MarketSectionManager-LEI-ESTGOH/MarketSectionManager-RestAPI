@@ -4,8 +4,6 @@
     <list default="true" id="f9a01334-1100-4f81-bd66-2b5ffe4b06eb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Action/RastreabilidadeAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Action/RastreabilidadeAction.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Domain/User/Repository/RastreabilidadeRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/User/Repository/RastreabilidadeRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Domain/User/Service/RastreabilidadeCreator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/User/Service/RastreabilidadeCreator.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,7 +143,7 @@
       <workItem from="1619528756057" duration="238000" />
       <workItem from="1619529202300" duration="3016000" />
       <workItem from="1620047806347" duration="296000" />
-      <workItem from="1620133518509" duration="5343000" />
+      <workItem from="1620133518509" duration="8928000" />
     </task>
     <servers />
   </component>
