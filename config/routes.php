@@ -29,6 +29,8 @@ return function (App $app) {
 
     $app->post('/rastreabilidade', \App\Action\RastreabilidadeAction::class);
 
+    $app->get('/area', \App\Action\AreaFetchAction::class);
+
     $app->get('/ggg', function (ServerRequestInterface $request, ResponseInterface $response) {
 
         $data1 = array();
