@@ -21,6 +21,8 @@ final class ComponentesAreaAction
     ): ResponseInterface {
 
         $data = (array)$request->getParsedBody();
+        $data["area_num"] = $request->getAttribute("area_num");
+
 
         // Invoke the Domain with inputs and retain the result
         $componentes_fetch = $this->AreaCreator->getComponentesArea($data);
@@ -37,5 +39,7 @@ final class ComponentesAreaAction
         return $response
             ->withHeader('Content-Type', 'application/json')
             ->withStatus(200);
+
+
     }
 }

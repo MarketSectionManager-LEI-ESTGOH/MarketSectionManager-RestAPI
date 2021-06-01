@@ -33,7 +33,7 @@ return function (App $app) {
 
     $app->get('/area', \App\Action\AreaFetchAction::class);
 
-    $app->get('/area/componentes', \App\Action\ComponentesAreaAction::class);
+    $app->get('/area/componentes/{area_num}', \App\Action\ComponentesAreaAction::class);
 
     $app->get('/ggg', function (ServerRequestInterface $request, ResponseInterface $response) {
 

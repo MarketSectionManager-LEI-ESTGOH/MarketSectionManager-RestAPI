@@ -15,4 +15,6 @@ return function (App $app) {
 
     // Catch exceptions and errors
     $app->add(ErrorMiddleware::class);
+
+
 };

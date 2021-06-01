@@ -26,8 +26,7 @@ final class AreaCreator
 
     public function getComponentesArea(array $data)
     {
-        $componentesList = $this->repository->getComponentesArea($data);
-
+        $componentesList = $this->repository->getComponentesArea($data['area_num']);
         return $componentesList;
     }
 

@@ -36,18 +36,16 @@ class AreaRepository
         return $db->fetchAll();
     }
 
-    public function getComponentesArea(array $data)
+    public function getComponentesArea(String $numero)
     {
-
         $row = [
-            'area_num' => $data['area_num']
+            'numero' => $numero
         ];
 
-        $sql = "Select comp.id, comp.designacao, ap.area_id, lmp.`data`
-                FROM componentes comp
-                INNER JOIN area_componentes ap
+        $sql = "Select comp.id, comp.designacao, ap.area_id, lmp.`data` FROM componentes comp 
+                INNER JOIN area_componentes ap 
                     ON comp.id = ap.componentes_id
-	                AND ap.area_id = (Select id From area Where numero=:area_num)
+	                AND ap.area_id = (Select id From area Where numero=:numero)
 	            LEFT JOIN limpeza lmp
 	                ON lmp.area_componentes_id = ap.id;";
 
