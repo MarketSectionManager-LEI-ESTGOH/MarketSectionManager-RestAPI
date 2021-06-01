@@ -15,8 +15,10 @@ return function (App $app) {
 
     $app->post('/users', \App\Action\UserCreateAction::class);
 
+    //Login User
     $app->post('/login', \App\Action\LoginAction::class);
 
+    // /area/frigorifica
     $app->post('/area/frigorifica', \App\Action\AreaFrigorificaAction::class);
 
     $app->post('/area/frigorifica/temperatura', \App\Action\AreaFrigorificaTemperaturaAction::class);
@@ -30,6 +32,8 @@ return function (App $app) {
     $app->post('/rastreabilidade', \App\Action\RastreabilidadeAction::class);
 
     $app->get('/area', \App\Action\AreaFetchAction::class);
+
+    $app->get('/area/componentes', \App\Action\ComponentesAreaAction::class);
 
     $app->get('/ggg', function (ServerRequestInterface $request, ResponseInterface $response) {
 
