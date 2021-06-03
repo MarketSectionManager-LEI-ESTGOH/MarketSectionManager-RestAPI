@@ -45,7 +45,13 @@ class AreaFrigorificaRepository
                 tem_min=:tem_min,
                 tem_max=:tem_max;";
 
-        $this->connection->prepare($sql)->execute($row);
+        try{
+            $this->connection->prepare($sql)->execute($row);
+        }catch (\Exception $e){
+            return -1;
+            print($e);
+        }
+
 
         return (int)$this->connection->lastInsertId();
     }

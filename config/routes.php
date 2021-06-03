@@ -37,6 +37,8 @@ return function (App $app) {
 
     $app->post('/area/componentes/{id}', \App\Action\AreaLimpezaAction::class);
 
+    $app->get('/produto/validade/{ean}', \App\Action\ValidadeProductFetchAction::class);
+
     $app->get('/ggg', function (ServerRequestInterface $request, ResponseInterface $response) {
 
         $data1 = array();
