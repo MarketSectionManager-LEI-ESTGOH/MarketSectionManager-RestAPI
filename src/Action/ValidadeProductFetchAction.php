@@ -25,10 +25,12 @@ final class ValidadeProductFetchAction
         // Invoke the Domain with inputs and retain the result
         $validade_id = $this->ValidadeCreator->getProdutoByEAN($data);
 
+        $result = array();
+        for($i = 0 ; $i < count($validade_id); $i++){
+            $result[$i] = $validade_id[$i];
+        }
+
         // Transform the result into the JSON representation
-        $result = [
-            'validade_id' => $validade_id
-        ];
 
         if(sizeof($validade_id) == 0){
             return $response
@@ -36,7 +38,7 @@ final class ValidadeProductFetchAction
                 ->withStatus(400);
         }else{
             // Build the HTTP response
-            $response->getBody()->write((string)json_encode($result));
+            $response->getBody()->write((string)json_encode($validade_id));
             return $response
                 ->withHeader('Content-Type', 'application/json')
                 ->withStatus(200);

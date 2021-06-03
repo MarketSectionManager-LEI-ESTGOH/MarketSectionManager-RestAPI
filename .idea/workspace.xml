@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f9a01334-1100-4f81-bd66-2b5ffe4b06eb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Action/ValidadeProductFetchAction.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Domain/User/Repository/ValidadeRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Domain/User/Service/ValidadeCreator.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Action/AreaFrigorificaAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Action/AreaFrigorificaAction.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Domain/User/Repository/AreaFrigorificaRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/User/Repository/AreaFrigorificaRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Action/ValidadeProductFetchAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Action/ValidadeProductFetchAction.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -200,7 +195,7 @@
       <workItem from="1622551838836" duration="15218000" />
       <workItem from="1622674710907" duration="2273000" />
       <workItem from="1622709838012" duration="1214000" />
-      <workItem from="1622728731963" duration="5144000" />
+      <workItem from="1622728731963" duration="7361000" />
     </task>
     <servers />
   </component>
