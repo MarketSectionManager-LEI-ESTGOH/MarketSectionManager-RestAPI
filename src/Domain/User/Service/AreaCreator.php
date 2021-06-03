@@ -30,6 +30,13 @@ final class AreaCreator
         return $componentesList;
     }
 
+    public function putAreaCompenetesLimpos(array $data, int $id)
+    {
+        $componentes_row = $this->repository->putAreaCompenetesLimpos($data, $id);
+        //print_r($componentes_row);
+        return $componentes_row;
+    }
+
     private function validateComponentesArea(array $data): void
     {
         $errors = [];

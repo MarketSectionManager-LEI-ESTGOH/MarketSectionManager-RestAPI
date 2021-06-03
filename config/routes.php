@@ -35,6 +35,8 @@ return function (App $app) {
 
     $app->get('/area/componentes/{area_num}', \App\Action\ComponentesAreaAction::class);
 
+    $app->post('/area/componentes/{id}', \App\Action\AreaLimpezaAction::class);
+
     $app->get('/ggg', function (ServerRequestInterface $request, ResponseInterface $response) {
 
         $data1 = array();
