@@ -49,7 +49,7 @@ class AreaFrigorificaRepository
             $this->connection->prepare($sql)->execute($row);
         }catch (\Exception $e){
             return -1;
-            print($e);
+            //print($e);
         }
 
 

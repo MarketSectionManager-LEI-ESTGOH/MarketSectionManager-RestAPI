@@ -39,6 +39,8 @@ return function (App $app) {
 
     $app->get('/produto/validade/{ean}', \App\Action\ValidadeProductFetchAction::class);
 
+    $app->post('/produto/validade', \App\Action\ValidadeProdutoAction::class);
+
     $app->get('/ggg', function (ServerRequestInterface $request, ResponseInterface $response) {
 
         $data1 = array();

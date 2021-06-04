@@ -39,4 +39,36 @@ class ValidadeRepository
 
         return $db->fetchAll();
     }
+
+    public function insertValidadeProduto(array $data)
+    {
+        $results = $this->getProdutoByEAN($data['ean']);
+        //print_r($results);
+        if(sizeof($results) == 0){
+            return -1;
+        }else{
+            $row = [
+                'ean' => $data['ean'],
+                'validade' => $data['validade'],
+                'n_interno' => $results[0]['n_interno'],
+                'nome' => $results[0]['nome'],
+                'produto_id' => $results[0]['id']
+            ];
+        }
+
+        $sql = "INSERT INTO validade SET 
+            ean=:ean, 
+            validade=:validade, 
+            n_interno=:n_interno, 
+            nome=:nome,
+            produto_id=:produto_id;";
+
+        try{
+            $this->connection->prepare($sql)->execute($row);
+        }catch (\Exception $e){
+            return -1;
+        }
+
+        return (int)$this->connection->lastInsertId();
+    }
 }

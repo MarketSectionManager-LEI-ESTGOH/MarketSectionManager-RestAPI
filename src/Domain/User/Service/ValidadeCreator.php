@@ -23,6 +23,13 @@ final class ValidadeCreator
         return $produto_fetch;
     }
 
+    public function putValidadeByProduto(array $data)
+    {
+        $validade_id = $this->repository->insertValidadeProduto($data);
+
+        return $validade_id;
+    }
+
     private function validateNewAreaFrigorifica(array $data): void
     {
         $errors = [];
