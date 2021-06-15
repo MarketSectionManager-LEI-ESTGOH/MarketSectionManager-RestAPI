@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f9a01334-1100-4f81-bd66-2b5ffe4b06eb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Application/Middleware/AuthMiddleware.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/middleware.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/middleware.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/myAuthMiddleware.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Action/AreaFrigorificaFetchAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Action/AreaFrigorificaFetchAction.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Action/AreaFrigorificaTempraturaByUserAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Action/AreaFrigorificaTempraturaByUserAction.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Domain/User/Repository/AreaFrigorificaRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/User/Repository/AreaFrigorificaRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/User/Repository/AreaRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/User/Repository/AreaRepository.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -212,7 +206,8 @@
       <workItem from="1623357054426" duration="1986000" />
       <workItem from="1623442730405" duration="3103000" />
       <workItem from="1623447333187" duration="12000" />
-      <workItem from="1623487573917" duration="7737000" />
+      <workItem from="1623487573917" duration="8758000" />
+      <workItem from="1623761842712" duration="6302000" />
     </task>
     <servers />
   </component>

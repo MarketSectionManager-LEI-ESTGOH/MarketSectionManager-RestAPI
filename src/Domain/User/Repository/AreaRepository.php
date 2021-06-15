@@ -42,19 +42,20 @@ class AreaRepository
             'numero' => $numero
         ];
 
-        /*
-        $sql = "Select comp.id, comp.designacao, ap.area_id, lmp.`data` FROM componentes comp 
+        $sql = "Select comp.id, comp.designacao, ap.area_id, MAX(lmp.`data`) as data FROM componentes comp
                 INNER JOIN area_componentes ap 
                     ON comp.id = ap.componentes_id
 	                AND ap.area_id = (Select id From area Where numero=:numero)
 	            LEFT JOIN limpeza lmp
-	                ON lmp.area_componentes_id = ap.id;";
-        */
+	                ON lmp.area_componentes_id = ap.id
+                Group by id;";
 
+        /*
         $sql = "Select comp.id, comp.designacao, ap.area_id FROM componentes comp 
                 INNER JOIN area_componentes ap 
                     ON comp.id = ap.componentes_id
 	                AND ap.area_id = (Select id From area Where numero=:numero);";
+        */
 
         $db = $this->connection->prepare($sql);
         $db->execute($row);
