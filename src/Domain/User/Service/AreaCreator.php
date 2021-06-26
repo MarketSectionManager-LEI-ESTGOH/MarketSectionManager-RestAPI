@@ -37,6 +37,12 @@ final class AreaCreator
         return $componentes_row;
     }
 
+    public function getComponentesLimposByUser(int $id)
+    {
+        $componentesList = $this->repository->getComponentesLimposByUser($id);
+        return $componentesList;
+    }
+
     private function validateComponentesArea(array $data): void
     {
         $errors = [];

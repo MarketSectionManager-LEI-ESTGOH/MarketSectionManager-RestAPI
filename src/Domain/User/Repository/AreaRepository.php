@@ -101,4 +101,29 @@ class AreaRepository
 
         return $final_res;
     }
+
+    public function getComponentesLimposByUser(int $id)
+    {
+        $row = [
+            'id' => $id
+        ];
+
+        $sql = "Select * FROM(
+                Select comp.designacao, ar.designacao as area_designacao, lmp.data as last_date
+                From limpeza lmp
+                INNER JOIN area_componentes ap 
+                    ON ap.id = lmp.area_componentes_id
+                INNER JOIN area ar 
+                    ON ar.id = ap.area_id
+                INNER JOIN componentes comp
+                    ON comp.id = ap.componentes_id
+                Where lmp.user_id=:id
+                ORDER BY lmp.data DESC LIMIT 5)
+                sub ORDER BY last_date ASC;";
+
+        $db = $this->connection->prepare($sql);
+        $db->execute($row);
+
+        return $db->fetchAll();
+    }
 }

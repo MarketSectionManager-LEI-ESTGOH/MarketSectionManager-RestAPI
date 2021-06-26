@@ -87,6 +87,8 @@ return function (App $app) {
 
     $app->post('/produto/validade', \App\Action\ValidadeProdutoAction::class);
 
+    $app->get('/area/componetes/user/{id}', \App\Action\LastComponentesLimpezaUser::class);
+
     $app->get('/ggg', function (ServerRequestInterface $request, ResponseInterface $response) {
 
         $data1 = array();
