@@ -116,7 +116,7 @@ class AreaFrigorificaRepository
                     FROM temperatura temp, area_frigorifica af
                     WHERE user_id=:user_id
                     AND temp.area_frigorifica_id = af.numero
-                    ORDER BY data_hora DESC LIMIT 5) 
+                    ORDER BY data_hora DESC LIMIT 10) 
                 sub ORDER BY data_hora ASC;";
 
         $db = $this->connection->prepare($sql);

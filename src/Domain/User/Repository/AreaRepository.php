@@ -118,7 +118,7 @@ class AreaRepository
                 INNER JOIN componentes comp
                     ON comp.id = ap.componentes_id
                 Where lmp.user_id=:id
-                ORDER BY lmp.data DESC LIMIT 5)
+                ORDER BY lmp.data DESC LIMIT 10)
                 sub ORDER BY last_date ASC;";
 
         $db = $this->connection->prepare($sql);
