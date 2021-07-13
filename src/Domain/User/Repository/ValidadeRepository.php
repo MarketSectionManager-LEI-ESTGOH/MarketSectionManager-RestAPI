@@ -44,6 +44,7 @@ class ValidadeRepository
     {
         $results = $this->getProdutoByEAN($data['ean']);
         //print_r($results);
+        //print(sizeof($results));
         if(sizeof($results) == 0){
             return -1;
         }else{
@@ -65,7 +66,7 @@ class ValidadeRepository
 
         try{
             $this->connection->prepare($sql)->execute($row);
-        }catch (\Exception $e){
+        }catch (Exception $e){
             return -1;
         }
 
