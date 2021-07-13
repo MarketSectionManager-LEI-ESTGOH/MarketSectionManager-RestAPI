@@ -45,7 +45,13 @@ class AreaFrigorificaRepository
                 tem_min=:tem_min,
                 tem_max=:tem_max;";
 
-        $this->connection->prepare($sql)->execute($row);
+        try{
+            $this->connection->prepare($sql)->execute($row);
+        }catch (\Exception $e){
+            return -1;
+            //print($e);
+        }
+
 
         return (int)$this->connection->lastInsertId();
     }
@@ -105,7 +111,13 @@ class AreaFrigorificaRepository
             'user_id' => $id,
         ];
 
-        $sql = "Select * FROM (Select temperatura, data_hora, area_frigorifica_id FROM temperatura WHERE user_id=:user_id ORDER BY data_hora DESC LIMIT 5) sub ORDER BY data_hora ASC;";
+        $sql = "Select * FROM 
+                (Select temp.temperatura, temp.data_hora, temp.area_frigorifica_id, af.designacao
+                    FROM temperatura temp, area_frigorifica af
+                    WHERE user_id=:user_id
+                    AND temp.area_frigorifica_id = af.numero
+                    ORDER BY data_hora DESC LIMIT 10) 
+                sub ORDER BY data_hora ASC;";
 
         $db = $this->connection->prepare($sql);
         $db->execute($row);

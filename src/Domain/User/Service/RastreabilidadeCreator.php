@@ -30,13 +30,7 @@ final class RastreabilidadeCreator
         // Input validation
         $this->validateNewRastreabilidade($data);
         $id = $this->repository->addRastreabilidade($data);
-
-
-        if($id != null){
-            return $id;
-        }
-        //Null if ser not found
-        return null;
+        return $id;
     }
 
     /**
@@ -66,6 +60,10 @@ final class RastreabilidadeCreator
 
         if (empty($data['fornecedor_id'])) {
             $errors['fornecedor_id'] = 'Input required';
+        }
+
+        if (empty($data['origem'])) {
+            $errors['origem'] = 'Input required';
         }
 
         if ($errors) {

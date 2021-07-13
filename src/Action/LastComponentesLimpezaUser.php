@@ -1,16 +1,19 @@
 <?php
+
+
 namespace App\Action;
 
-use App\Domain\User\Service\AreaFrigorificaCreator;
+
+use App\Domain\User\Service\AreaCreator;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 
-final class AreaFrigorificaTempraturaByUserAction
+class LastComponentesLimpezaUser
 {
-    private $AreaFrigorificaCreator;
+    private $AreaCreator;
 
-    public function __construct(AreaFrigorificaCreator $AreaFrigorificaCreator){
-        $this->AreaFrigorificaCreator = $AreaFrigorificaCreator;
+    public function __construct(AreaCreator $AreaCreator){
+        $this->AreaCreator = $AreaCreator;
     }
 
     public function __invoke(ServerRequestInterface $request, ResponseInterface $response): ResponseInterface {
@@ -21,15 +24,15 @@ final class AreaFrigorificaTempraturaByUserAction
 
 
         // Invoke the Domain with inputs and retain the result
-        $areafrigorifica_temp_ByUser = $this->AreaFrigorificaCreator->getAreaFrigorificaTemperaturaByUser($data);
+        $area_limpeza_ByUser = $this->AreaCreator->getComponentesLimposByUser($data["id"]);
 
         // Transform the result into the JSON representation
         $result = array();
-        for($i = 0 ; $i < count($areafrigorifica_temp_ByUser); $i++){
-            $result[$i] = $areafrigorifica_temp_ByUser[$i];
+        for($i = 0 ; $i < count($area_limpeza_ByUser); $i++){
+            $result[$i] = $area_limpeza_ByUser[$i];
         }
 
-        if($areafrigorifica_temp_ByUser == null){
+        if($area_limpeza_ByUser == null){
             return $response->withStatus(400);
         }else{
             // Build the HTTP response
@@ -42,5 +45,3 @@ final class AreaFrigorificaTempraturaByUserAction
 
     }
 }
-
-

@@ -1,17 +1,17 @@
 <?php
 namespace App\Action;
 
-use App\Domain\User\Service\AreaFrigorificaCreator;
+use App\Domain\User\Service\ValidadeCreator;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 
-final class AreaFrigorificaAction
+final class ValidadeProdutoAction
 {
-    private $AreaFrigorificaCreator;
+    private $ValidadeCreator;
 
-    public function __construct(AreaFrigorificaCreator $AreaFrigorificaCreator)
+    public function __construct(ValidadeCreator $ValidadeCreator)
     {
-        $this->AreaFrigorificaCreator = $AreaFrigorificaCreator;
+        $this->ValidadeCreator = $ValidadeCreator;
     }
 
     public function __invoke(
@@ -23,14 +23,15 @@ final class AreaFrigorificaAction
 
 
         // Invoke the Domain with inputs and retain the result
-        $areafrigorifica_id = $this->AreaFrigorificaCreator->createAreaFrigorifica($data);
+        $validade_id = $this->ValidadeCreator->putValidadeByProduto($data);
 
-        // Transform the result into the JSON representation
         $result = [
-            'areafrigorifica_id' => $areafrigorifica_id
+            '$validade_id' => $validade_id
         ];
 
-        if($areafrigorifica_id == -1){
+        // Transform the result into the JSON representation
+
+        if($validade_id == -1){
             return $response
                 ->withHeader('Content-Type', 'application/json')
                 ->withStatus(400);
