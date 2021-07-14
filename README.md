@@ -3,7 +3,7 @@
 
 With this project we pretend to simplify the mandatory registers that are needed to the retail industry. This project has a variety of technologies on it's total, but for the end users are provided two platforms: a Desktop Application and an Android Application. The Desktop Application is meant for the Administrators of the system and the Android one is for the employees that, on every part of the stores can register and manage the registers.
 
-This repository, has only the Desktop Part of the System.
+This repository, has only the REST API Part of the System.
 
 ## Built With
 * [Java](https://www.java.com/en/)
